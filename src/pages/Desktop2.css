@@ -36,7 +36,7 @@
   margin: 0 !important;
   top: -60.5px;
   left: 0;
-  border-radius: var(--br-50);
+  border-radius: 30px;
   background-color: var(---);
   height: 87px;
   z-index: 0;
@@ -422,11 +422,11 @@
   height: 87px;
   position: absolute;
   margin: 0 !important;
-  top: 7879px;
+  top: 7960px;
   left: 0;
-  border-radius: var(--br-50);
+  border-radius: 30px;
   background-color: var(---);
-  z-index: 3;
+  z-index: 2;
 }
 @media screen and (max-width: 1050px) {
   .h2,

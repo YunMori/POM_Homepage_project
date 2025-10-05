@@ -2,6 +2,7 @@
 .footer-h1 {
   position: relative;
   flex-shrink: 0;
+  z-index: 2;
 }
 .footer {
   align-self: stretch;
@@ -28,7 +29,7 @@
   font-family: inherit;
   text-align: left;
   display: inline-block;
-  z-index: 0;
+  z-index: 1;
 }
 .footer-child,
 .footer-h2,

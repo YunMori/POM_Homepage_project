@@ -39,7 +39,7 @@ const IntroSection = memo(({ className = "" }) => {
       <h2 className="h26">가르침</h2>
       <div className="div12">
         <p className="p19">
-          교육의 목적은 배움에 있지만, 배움의 완성은 에 있습니다.
+          교육의 목적은 배움에 있지만, 배움의 완성은   에 있습니다.
         </p>
         <p className="intro-section-p">
           수학의힘이 지향하는 수학교육은 강의실에서 배우고 집에서 복습하며

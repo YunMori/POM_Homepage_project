@@ -27,7 +27,7 @@
 }
 .block {
   flex: 1;
-  position: relative;
+  position: flex;
   gap: var(--gap-50);
   text-align: center;
   font-size: var(--fs-80);
@@ -41,7 +41,7 @@
 }
 .hero-section-div {
   align-self: stretch;
-  position: relative;
+  position: flex;
   letter-spacing: -0.08em;
   line-height: 100%;
 }
@@ -50,7 +50,7 @@
 }
 .div7 {
   align-self: stretch;
-  position: relative;
+  position: flex;
   font-size: var(--fs-15);
   letter-spacing: -0.04em;
   line-height: 110%;
@@ -58,7 +58,7 @@
 }
 .hero-section-image-icon {
   width: 429px;
-  position: relative;
+  position: flex;
   max-height: 100%;
   object-fit: cover;
   max-width: 100%;
