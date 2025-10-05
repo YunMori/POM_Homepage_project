@@ -1,0 +1,73 @@
+.nav {
+  height: var(--height-101);
+  background-color: var(---);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-32) var(--padding-40);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--fs-19);
+  color: var(--Background-Background-4);
+  font-family: var(--font-noto-sans-kr);
+}
+.nav-labels {
+  width: var(--width-1200);
+  position: relative;
+  height: var(--height-59);
+}
+.main-logo-icon {
+  position: absolute;
+  height: 100%;
+  top: -0.1px;
+  bottom: 0.1px;
+  left: 0;
+  max-height: 100%;
+  width: var(--width-192);
+  object-fit: cover;
+}
+.nav-curriculum {
+  position: absolute;
+  top: 16.9px;
+  right: 289px;
+  letter-spacing: -0.04em;
+  line-height: 110%;
+  font-weight: 500;
+  cursor: pointer;
+}
+.blog,
+.contact {
+  top: calc(50% - 12.6px);
+}
+.contact {
+  position: absolute;
+  right: 190px;
+  letter-spacing: -0.04em;
+  line-height: 110%;
+  font-weight: 500;
+}
+.blog {
+  right: 120px;
+  text-decoration: underline;
+  color: inherit;
+}
+.blog,
+.home,
+.instagram {
+  position: absolute;
+  letter-spacing: -0.04em;
+  line-height: 110%;
+  font-weight: 500;
+}
+.instagram {
+  top: calc(50% - 12.6px);
+  right: 3px;
+  text-decoration: underline;
+  color: inherit;
+}
+.home {
+  top: 16.9px;
+  left: calc(50% + 130px);
+  color: var(--Background-Background-2);
+  cursor: pointer;
+}

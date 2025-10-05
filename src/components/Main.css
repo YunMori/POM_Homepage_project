@@ -1,0 +1,210 @@
+.connect-section,
+.main8 {
+  align-self: stretch;
+  height: 564px;
+  background-color: var(--Background-Background-4);
+  flex-shrink: 0;
+}
+.main8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  font-size: var(--fs-30);
+  color: var(--Background-Background-4);
+  font-family: var(--font-noto-sans-kr);
+}
+.connect-section {
+  overflow: hidden;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-80) var(--padding-40);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-0);
+}
+.main8-div {
+  width: 789px;
+  position: absolute;
+  margin: 0 !important;
+  top: 121px;
+  left: 53px;
+  font-size: var(--fs-60);
+  letter-spacing: -0.07em;
+  line-height: 105%;
+  text-align: left;
+  display: inline-block;
+  z-index: 0;
+  flex-shrink: 0;
+  color: var(--color-black);
+}
+.main8-p {
+  margin: 0;
+}
+.main8-span {
+  color: var(---);
+}
+.card-2 {
+  height: var(--height-151);
+  width: var(--width-230);
+  top: 304.5px;
+  left: 525px;
+  border-radius: var(--br-20);
+  background-color: var(---);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-60) var(--padding-0);
+  box-sizing: border-box;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.card-1,
+.card-2,
+.div16 {
+  margin: 0 !important;
+  position: absolute;
+}
+.div16 {
+  width: var(--width-196);
+  top: 97.5px;
+  left: 17px;
+  letter-spacing: -0.04em;
+  line-height: 105%;
+  display: inline-block;
+  z-index: 0;
+}
+.card-1 {
+  height: var(--height-151);
+  width: var(--width-230);
+  top: 304px;
+  left: 218px;
+  border-radius: var(--br-20);
+  background-color: var(---);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-60) var(--padding-0);
+  box-sizing: border-box;
+  gap: var(--gap-40);
+  z-index: 2;
+  flex-shrink: 0;
+}
+.div17 {
+  width: 130px;
+  top: 38.5px;
+  left: 50px;
+  letter-spacing: -0.04em;
+  line-height: 105%;
+  display: inline-block;
+  z-index: 0;
+}
+.card-3,
+.div17,
+.div18 {
+  margin: 0 !important;
+  position: absolute;
+}
+.div18 {
+  width: var(--width-196);
+  top: 81.5px;
+  left: 17px;
+  letter-spacing: -0.04em;
+  line-height: 105%;
+  display: inline-block;
+  z-index: 1;
+}
+.card-3 {
+  height: var(--height-151);
+  width: var(--width-230);
+  top: 305px;
+  left: 832px;
+  border-radius: var(--br-20);
+  background-color: var(---);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-60) var(--padding-0);
+  box-sizing: border-box;
+  gap: var(--gap-40);
+  z-index: 3;
+  flex-shrink: 0;
+}
+.images-removebg-preview-1-icon {
+  width: 66px;
+  top: 17px;
+  left: 82px;
+  max-height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 0;
+}
+.div19,
+.images-removebg-preview-1-icon,
+.pngwingcom-1-icon {
+  position: absolute;
+  margin: 0 !important;
+}
+.div19 {
+  width: var(--width-196);
+  top: 98.5px;
+  left: 17px;
+  letter-spacing: -0.04em;
+  line-height: 105%;
+  display: inline-block;
+  z-index: 1;
+}
+.pngwingcom-1-icon {
+  width: 63px;
+  top: 386px;
+  left: 608px;
+  max-height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 4;
+  flex-shrink: 0;
+}
+.connect-section-child,
+.connect-section-item {
+  width: var(--width-1280);
+  position: absolute;
+  margin: 0 !important;
+  top: 617px;
+  left: 0;
+  border-radius: var(--br-50);
+  background-color: var(---);
+  height: var(--height-107);
+  z-index: 5;
+  flex-shrink: 0;
+}
+.connect-section-item {
+  top: 53px;
+  z-index: 6;
+}
+@media screen and (max-width: 750px) {
+  .main8-div {
+    font-size: var(--fs-36);
+    line-height: var(--lh-38);
+  }
+  .div16,
+  .div17,
+  .div18,
+  .div19 {
+    font-size: var(--fs-18);
+    line-height: var(--lh-19);
+  }
+}
+@media screen and (max-width: 450px) {
+  .main8-div {
+    font-size: var(--fs-48);
+    line-height: var(--lh-50);
+  }
+  .div16,
+  .div17,
+  .div18,
+  .div19 {
+    font-size: var(--fs-24);
+    line-height: var(--lh-25);
+  }
+}

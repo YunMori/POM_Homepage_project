@@ -1,0 +1,103 @@
+.section-1,
+.section-1-card {
+  display: flex;
+  box-sizing: border-box;
+}
+.section-1 {
+  width: 100%;
+  height: 482px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-20) var(--padding-0) var(--padding-20)
+    var(--padding-20);
+  max-width: var(--max-w-1500);
+  z-index: 7;
+  text-align: left;
+  font-size: var(--fs-40);
+  color: var(--Background-Background-4);
+  font-family: var(--font-noto-sans-kr);
+}
+.section-1-card {
+  width: 1036px;
+  border-radius: var(--br-20);
+  background-color: var(---);
+  align-items: center;
+  padding: var(--padding-80) var(--padding-100) var(--padding-80)
+    var(--padding-80);
+  gap: 70px;
+}
+.card-spacer-icon {
+  width: 400px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+.section-1-content,
+.section-1-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-1-content {
+  flex: 1;
+}
+.section-1-text {
+  align-self: stretch;
+  gap: var(--gap-40);
+}
+.section-1-div {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.04em;
+  line-height: 105%;
+}
+.section-1-p {
+  margin: 0;
+}
+.contest {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  letter-spacing: -0.04em;
+  line-height: 110%;
+}
+.p23 {
+  margin: 0;
+  white-space: pre-wrap;
+}
+@media screen and (max-width: 1050px) {
+  .section-1-card {
+    gap: var(--gap-35);
+    padding-left: var(--padding-40);
+    padding-right: 50px;
+    box-sizing: border-box;
+  }
+  .section-1-div {
+    font-size: var(--fs-32);
+    line-height: var(--lh-34);
+  }
+}
+@media screen and (max-width: 750px) {
+  .section-1-card {
+    gap: var(--gap-17);
+    padding-right: 25px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .section-1-card {
+    padding-top: var(--padding-52);
+    padding-bottom: var(--padding-52);
+    box-sizing: border-box;
+  }
+  .section-1-content {
+    gap: var(--gap-35);
+  }
+  .section-1-text {
+    gap: var(--gap-20);
+  }
+  .section-1-div {
+    font-size: var(--fs-24);
+    line-height: var(--lh-25);
+  }
+}
