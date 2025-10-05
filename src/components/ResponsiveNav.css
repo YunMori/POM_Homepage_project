@@ -1,0 +1,217 @@
+.responsive-nav {
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Logo */
+.nav-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 25px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--background-white);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Desktop Navigation - Hidden on Mobile */
+.desktop-nav {
+  display: none;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-nav.open {
+  max-height: 400px;
+}
+
+.mobile-nav button,
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  color: var(--background-white);
+  font-size: var(--text-lg);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav button:hover,
+.mobile-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav button.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .nav-content {
+    height: 80px;
+  }
+
+  .nav-logo img {
+    height: 50px;
+  }
+
+  .mobile-nav button,
+  .mobile-nav a {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .nav-container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .nav-content {
+    height: 90px;
+  }
+
+  .nav-logo img {
+    height: 55px;
+  }
+
+  /* Hide mobile menu button */
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  /* Show desktop navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  .desktop-nav button,
+  .desktop-nav a {
+    background: none;
+    border: none;
+    color: var(--background-white);
+    font-size: var(--text-lg);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    cursor: pointer;
+    padding: var(--spacing-xs) 0;
+    text-decoration: none;
+    position: relative;
+    transition: opacity var(--transition-fast);
+  }
+
+  .desktop-nav button::after,
+  .desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--background-white);
+    transition: width var(--transition-base);
+  }
+
+  .desktop-nav button:hover::after,
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+
+  .desktop-nav button.active {
+    font-weight: 700;
+  }
+
+  .desktop-nav button.active::after {
+    width: 100%;
+  }
+
+  .desktop-nav button:hover,
+  .desktop-nav a:hover {
+    opacity: 0.8;
+  }
+
+  /* Hide mobile navigation */
+  .mobile-nav {
+    display: none;
+  }
+}

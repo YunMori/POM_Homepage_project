@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "./responsive_app";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import "./global.css";
+import "./responsive_global.css";
 
 const container = document.getElementById("root");
 
