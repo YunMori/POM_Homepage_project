@@ -2,13 +2,15 @@
   background-color: var(--primary-color);
   width: 100%;
   padding: var(--spacing-3xl) 0;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .hero-container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .hero-content {
@@ -32,7 +34,9 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  align-items: center;  /* 이 줄 추가 */
   gap: var(--spacing-lg);
+  text-align: center;  /* 이 줄 추가 */
 }
 
 .hero-title {
@@ -61,20 +65,21 @@
 }
 
 .hero-cta-btn {
-  align-self: center;
   background-color: var(--background-white);
   color: var(--primary-color);
   font-family: var(--font-primary);
   font-size: var(--text-base);
   font-weight: 600;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: 8px 20px;
   border: none;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-md);
   text-decoration: none;
-  display: inline-block;
+  display: block;  /* inline-block에서 block으로 변경 */
+  margin: 0 auto;  /* 이 줄 추가 - 좌우 마진 auto로 중앙 정렬 */
+  width: fit-content;  /* 이 줄 추가 - 버튼 크기만큼만 차지 */
 }
 
 .hero-cta-btn:hover {
@@ -86,7 +91,6 @@
 .hero-cta-btn:active {
   transform: translateY(0);
 }
-
 /* Image */
 .hero-image-wrapper {
   width: 100%;
@@ -94,14 +98,6 @@
   display: flex;
   justify-content: center;
 }
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-}
-
 /* Tablet (768px and up) */
 @media (min-width: 768px) {
   .hero-section {

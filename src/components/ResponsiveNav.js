@@ -14,6 +14,7 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
   const handleNavigation = (path) => {
     navigate(path);
     setIsMenuOpen(false);
+
   };
 
   return (

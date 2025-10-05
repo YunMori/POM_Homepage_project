@@ -22,7 +22,7 @@ const ResponsiveHero = memo(({ className = "" }) => {
                 <span className="hero-title-line">성적은 데이터!</span>
               </h1>
               <p className="hero-description">
-                진단→개별맞춤→오답코칭 루프로 매주 성장합니다. 
+                진단→개별맞춤→오답코칭 루프로 매주 성장합니다. <br></br>
                 학부모 리포트로 변화가 보입니다.
               </p>
               <button 

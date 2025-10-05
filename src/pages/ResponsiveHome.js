@@ -19,7 +19,6 @@ const ResponsiveHome = memo(() => {
             <div className="features-header">
               <p className="features-subtitle">상위권 수학 교육에 최적화된</p>
               <h2 className="features-title">맞춤식 수학 학습!</h2>
-              <div className="under_line"/>
               <p className="features-description">
                 창의융합형 미래 인재를 키우는 세종 최고의 수학학원!
               </p>
@@ -41,6 +40,7 @@ const ResponsiveHome = memo(() => {
             </div>
 
             <div className="features-quote">
+              
               <h3 className="quote-text">
                 "다른 학생에게 설명할 수 있게 하는 <span className="highlight">실천 교육</span>입니다."
               </h3>
