@@ -16,7 +16,7 @@
 
 /* Features Section */
 .features-section {
-  background-color: var(--background-white);
+  background-color: var(--background-light);
   padding: var(--spacing-3xl) 0;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .feature-card {
-  background-color: var(--background-light);
+  background-color: var(--background-white);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   text-align: center;
@@ -146,38 +146,102 @@
 }
 
 .concerns-grid {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+}
+
+.concerns-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .concern-card {
   background-color: var(--primary-color);
   color: var(--background-white);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: 20px;
   position: relative;
+  max-width: 70%;
+  box-shadow: 0 2px 10px rgba(85, 139, 207, 0.3);
+  opacity: 0;
+  transform: scale(0.8);
+}
+/* 첫 번째 카드 - 왼쪽 */
+.concern-card:nth-child(1) {
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 4px;
+  animation: popInLeft 0.4s ease-out 0.5s forwards;
 }
 
-.concern-card {
-  font-size: var(--text-xl);
+/* 두 번째 카드 - 오른쪽 */
+.concern-card:nth-child(2) {
+  align-self: flex-end;
+  background-color: var(--background-white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px 20px 4px 20px;
+  animation: popInRight 0.4s ease-out 1.5s forwards;
+}
+
+/* 세 번째 카드 - 왼쪽 */
+.concern-card:nth-child(3) {
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 4px;
+  animation: popInLeft 0.4s ease-out 2.5s forwards;
+}
+
+.concern-card p {
+  font-size: var(--text-lg);
   font-weight: 500;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.02em;
 }
 
+
+@keyframes popInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* 팝업 애니메이션 - 오른쪽에서 */
+@keyframes popInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
 /* Results Section */
 .results-section {
-  background-color: var(--background-white);
+  background-color: var(--background-light);
   padding: var(--spacing-3xl) 0;
 }
 
-.results-content {
-  text-align: center;
-}
 
 .results-title {
+  text-align: left;
   font-size: var(--text-4xl);
   font-weight: 700;
   margin: 0 0 var(--spacing-xl);
@@ -186,14 +250,18 @@
 }
 
 .results-title span {
-  display: block;
+  display: inline;
 }
 
 .results-badge {
+  font-weight: 700;
+  text-align: center;
   background-color: var(--background-light);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
-  display: inline-block;
+  display: block;  /* inline-block에서 block으로 변경 */
+  margin: 0 auto;  /* 좌우 마진 auto로 중앙 정렬 */
+  width: fit-content;  /* 내용물 크기만큼만 차지 */
 }
 
 .results-badge h3 {
@@ -203,7 +271,7 @@
 }
 
 .results-badge p {
-  font-size: var(--text-xl);
+  font-size: var(--text-3xl);
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -211,14 +279,14 @@
 /* Why Us Section */
 .why-us-section {
   background-color: var(--background-light);
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-4xl) 0;
 }
 
 .section-title {
   font-size: var(--text-4xl);
   font-weight: 700;
   text-align: center;
-  margin: 0 0 var(--spacing-3xl);
+  margin: 0 0 var(--spacing-4xl);
   letter-spacing: -0.04em;
 }
 
@@ -226,56 +294,157 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3xl);
+  align-items: center;
 }
 
+/* 카드 기본 스타일 */
 .why-card {
   background-color: var(--primary-color);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xl);
+  box-shadow: 0 4px 20px rgba(85, 139, 207, 0.25);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 900px;
 }
 
-.why-card-content {
-  padding: var(--spacing-xl);
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(85, 139, 207, 0.4);
+}
+
+/* 이미지 영역 */
+.why-card-image-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.why-card-image-left img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+/* 콘텐츠 영역 */
+.why-card-content-right {
   color: var(--background-white);
+  text-align: left;
 }
 
 .why-card-title {
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
-  margin: 0 0 var(--spacing-lg);
+  margin: 0 0 var(--spacing-md);
   line-height: 1.3;
-  letter-spacing: -0.03em;
+  color: var(--background-white);
 }
 
 .why-card-text {
   font-size: var(--text-base);
-  line-height: 1.6;
-  margin: 0 0 var(--spacing-md);
-  letter-spacing: -0.01em;
+  line-height: 1.7;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--background-white);
+  opacity: 0.95;
 }
 
 .why-card-note {
   font-size: var(--text-sm);
-  opacity: 0.9;
   margin: 0;
-  letter-spacing: -0.01em;
+  color: var(--background-white);
+  opacity: 0.85;
 }
 
-.why-card-image {
-  width: 100%;
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--text-5xl);
+  }
+
+  .why-us-cards {
+    align-items: stretch;
+  }
+
+  .why-card {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--spacing-3xl);
+    min-height: 350px;
+    max-width: 1000px;
+  }
+
+  /* 첫 번째 카드 - 왼쪽 정렬 */
+  .why-card:nth-child(1) {
+    align-self: flex-start;
+    margin-right: auto;
+  }
+
+  /* 두 번째 카드 - 오른쪽 정렬 + 역순 */
+  .why-card:nth-child(2) {
+    align-self: flex-end;
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
+
+  /* 세 번째 카드 - 왼쪽 정렬 */
+  .why-card:nth-child(3) {
+    align-self: flex-start;
+    margin-right: auto;
+  }
+
+  .why-card-image-left {
+    flex: 0 0 35%;
+    padding: var(--spacing-xl);
+  }
+
+  .why-card-image-left img {
+    max-width: 280px;
+  }
+
+  .why-card-content-right {
+    flex: 1;
+    padding: 0 var(--spacing-xl);
+  }
+
+  .why-card-title {
+    font-size: var(--text-3xl);
+  }
+
+  .why-card-text {
+    font-size: var(--text-lg);
+  }
+
+  .why-card-note {
+    font-size: var(--text-base);
+  }
 }
 
-.why-card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: var(--text-6xl);
+  }
+
+  .why-card {
+    max-width: 1100px;
+  }
+
+  .why-card-title {
+    font-size: var(--text-4xl);
+  }
+
+  .why-card-image-left img {
+    max-width: 300px;
+  }
 }
 
 /* Data Section */
 .data-section {
-  background-color: var(--background-white);
+  background-color: var(--background-light);
   padding: var(--spacing-3xl) 0;
 }
 
@@ -287,9 +456,8 @@
   line-height: 1.3;
   letter-spacing: -0.04em;
 }
-
-.data-title span {
-  display: block;
+.data-title span{
+  display: inline;
 }
 
 .data-feature {
@@ -297,9 +465,9 @@
 }
 
 .data-subtitle {
+  margin: 0 0 var(--spacing-xl);
   font-size: var(--text-2xl);
   font-weight: 500;
-  margin: 0;
   letter-spacing: -0.02em;
 }
 
