@@ -108,8 +108,19 @@
 
 .features-quote {
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-sm);
   border-radius: var(--radius-lg);
+
+}
+
+.quote-subtitle{
+  font-size: var(--text-xl);
+}
+
+.quote-subtitle .highlight{
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .quote-text {
@@ -148,7 +159,7 @@
   position: relative;
 }
 
-.concern-card p {
+.concern-card {
   font-size: var(--text-xl);
   font-weight: 500;
   margin: 0;
@@ -451,3 +462,4 @@
     font-size: var(--text-6xl);
   }
 }
+

@@ -40,6 +40,11 @@ const ResponsiveHome = memo(() => {
             </div>
 
             <div className="features-quote">
+
+              <div className="quote-subtitle">
+                교육의 목적은 배움에 있지만, 배움의 완성은 <span className="highlight" >가르침</span>에 있습니다.<br></br>
+                수학의힘이 자향하는 수학교육은 강의실에서 배우고 집에서 복습하며 강의실에 들어와
+              </div>
               
               <h3 className="quote-text">
                 "다른 학생에게 설명할 수 있게 하는 <span className="highlight">실천 교육</span>입니다."
@@ -55,6 +60,9 @@ const ResponsiveHome = memo(() => {
             <div className="concerns-grid">
               <div className="concern-card">
                 <p>우리 아이가 수학 공부를 스스로 잘할 수 있을까?</p>
+              </div>
+              <div className="concern-card">
+                <p>수학 학원은 언제부터 다니는 게 좋을까?</p>
               </div>
               <div className="concern-card">
                 <p>수학 성적이 금방 오를 수 있을까?</p>
