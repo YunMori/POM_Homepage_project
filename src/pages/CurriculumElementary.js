@@ -45,7 +45,7 @@ const CurriculumElementary = memo(() => {
                   className="curriculum-image"
                 />
               </div>
-              <div className="curriculum-image-wrapper">
+              <div className="curriculum-image-wrapper-sm">
                 <img 
                   src="/1st-img-2@2x.png" 
                   alt="초등부 커리큘럼 2" 

@@ -37,31 +37,31 @@ const CurriculumMiddle = memo(() => {
         {/* Content Section */}
         <section className="curriculum-content-section">
           <div className="container">
-            <div className="curriculum-images">
+            <div className="curriculum-images middle-layout">
               <div className="curriculum-image-wrapper">
                 <img 
-                  src="/2nd-img-1@2x.png" 
+                  src="/mid1.png" 
                   alt="중등부 커리큘럼 1" 
                   className="curriculum-image"
                 />
               </div>
               <div className="curriculum-image-wrapper">
                 <img 
-                  src="/2nd-img-4@2x.png" 
+                  src="/mid2.png" 
                   alt="중등부 커리큘럼 2" 
                   className="curriculum-image"
                 />
               </div>
               <div className="curriculum-image-wrapper">
                 <img 
-                  src="/2nd-img-3@2x.png" 
+                  src="/mid3.png" 
                   alt="중등부 커리큘럼 3" 
                   className="curriculum-image"
                 />
               </div>
               <div className="curriculum-image-wrapper">
                 <img 
-                  src="/2nd-img-2@2x.png" 
+                  src="/mid4.png" 
                   alt="중등부 커리큘럼 4" 
                   className="curriculum-image"
                 />
@@ -72,7 +72,7 @@ const CurriculumMiddle = memo(() => {
             <div className="curriculum-info-cards">
               <div className="curriculum-info-card">
                 <h3>내신 완벽 대비</h3>
-                <p>학교 시험에 최적화된 내신 관리 시스템</p>
+                <p>학교시험에 최적화된 내신관리 시스템</p>
               </div>
               <div className="curriculum-info-card">
                 <h3>심화 학습</h3>
