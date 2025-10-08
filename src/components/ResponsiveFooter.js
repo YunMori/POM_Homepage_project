@@ -28,7 +28,7 @@ const ResponsiveFooter = memo(({ className = "" }) => {
           {/* Business Info */}
           <div className="footer-section">
             <h3 className="footer-heading">사업자등록번호</h3>
-            <p className="footer-text">블라블라 알아서 적어</p>
+            <p className="footer-text">582-99-01596</p>
           </div>
 
           {/* Address */}
