@@ -77,6 +77,7 @@
 
 .feature-card {
   background-color: var(--background-white);
+  border: 2px solid var(--primary-color);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   text-align: center;
@@ -169,12 +170,16 @@
   box-shadow: 0 2px 10px rgba(85, 139, 207, 0.3);
   opacity: 0;
   transform: scale(0.8);
+  transform: none;
 }
 /* 첫 번째 카드 - 왼쪽 */
 .concern-card:nth-child(1) {
   align-self: flex-start;
   border-radius: 20px 20px 20px 4px;
-  animation: popInLeft 0.4s ease-out 0.5s forwards;
+}
+
+.concern-card:nth-child(1).animate {
+  animation: popInLeft 0.6s ease-out 0.1s forwards;
 }
 
 /* 두 번째 카드 - 오른쪽 */
@@ -184,14 +189,20 @@
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
   border-radius: 20px 20px 4px 20px;
-  animation: popInRight 0.4s ease-out 1.5s forwards;
+}
+
+.concern-card:nth-child(2).animate {
+   animation: popInRight 0.6s ease-out 0.3s forwards;
 }
 
 /* 세 번째 카드 - 왼쪽 */
 .concern-card:nth-child(3) {
   align-self: flex-start;
   border-radius: 20px 20px 20px 4px;
-  animation: popInLeft 0.4s ease-out 2.5s forwards;
+}
+
+.concern-card:nth-child(3).animate {
+  animation: popInLeft 0.6s ease-out 0.5s forwards;
 }
 
 .concern-card p {
@@ -233,12 +244,12 @@
     transform: translateX(0) scale(1);
   }
 }
+
 /* Results Section */
 .results-section {
   background-color: var(--background-light);
   padding: var(--spacing-3xl) 0;
 }
-
 
 .results-title {
   text-align: left;
@@ -254,28 +265,81 @@
 }
 
 .results-badge {
-  font-weight: 700;
+  padding: var(--spacing-xl) 0;
+  display: block;
+  margin: var(--spacing-xl) auto;
+  width: fit-content;
+  max-width: 90%;
   text-align: center;
-  background-color: var(--background-light);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  display: block;  /* inline-block에서 block으로 변경 */
-  margin: 0 auto;  /* 좌우 마진 auto로 중앙 정렬 */
-  width: fit-content;  /* 내용물 크기만큼만 차지 */
+  position: relative;
 }
 
 .results-badge h3 {
   font-size: var(--text-3xl);
-  margin: 0 0 var(--spacing-sm);
+  margin: 0 0 var(--spacing-md);
   letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.results-badge h3 .highlight {
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(85, 139, 207, 0.2);
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .results-badge p {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   margin: 0;
   letter-spacing: -0.02em;
+  color: #555;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
+/* 1등 강조 애니메이션 */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .results-badge {
+    padding: var(--spacing-3xl) var(--spacing-4xl);
+    max-width: 700px;
+  }
+
+  .results-badge h3 {
+    font-size: var(--text-4xl);
+  }
+
+  .results-badge h3 .highlight {
+    font-size: var(--text-5xl);
+  }
+
+  .results-badge p {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .results-badge {
+    max-width: 800px;
+  }
+}
+/* Why Us Section */
 /* Why Us Section */
 .why-us-section {
   background-color: var(--background-light);
@@ -297,18 +361,18 @@
   align-items: center;
 }
 
-/* 카드 기본 스타일 */
 .why-card {
   background-color: var(--primary-color);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-sm);
   box-shadow: 0 4px 20px rgba(85, 139, 207, 0.25);
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 900px;
+  max-width: 750px;
+  min-height: auto;
 }
 
 .why-card:hover {
@@ -316,38 +380,37 @@
   box-shadow: 0 12px 32px rgba(85, 139, 207, 0.4);
 }
 
-/* 이미지 영역 */
 .why-card-image-left {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-lg);
+  padding: 0;
 }
 
 .why-card-image-left img {
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
 }
 
-/* 콘텐츠 영역 */
 .why-card-content-right {
   color: var(--background-white);
-  text-align: left;
+  text-align: center;
+  padding: var(--spacing-sm) 0;
 }
 
 .why-card-title {
-  font-size: var(--text-2xl);
+  font-size: var(--text-sm);
   font-weight: 700;
-  margin: 0 0 var(--spacing-md);
+  margin: 0 0 var(--spacing-sm);
   line-height: 1.3;
   color: var(--background-white);
 }
 
 .why-card-text {
   font-size: var(--text-base);
-  line-height: 1.7;
-  margin: 0 0 var(--spacing-sm);
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-xs);
   color: var(--background-white);
   opacity: 0.95;
 }
@@ -372,25 +435,21 @@
   .why-card {
     flex-direction: row;
     align-items: center;
-    padding: var(--spacing-3xl);
-    min-height: 350px;
-    max-width: 1000px;
+    padding: var(--spacing-lg);
+    min-height: auto;
+    max-width: 700px;
+    gap: var(--spacing-md);
   }
 
-  /* 첫 번째 카드 - 왼쪽 정렬 */
   .why-card:nth-child(1) {
     align-self: flex-start;
     margin-right: auto;
   }
-
-  /* 두 번째 카드 - 오른쪽 정렬 + 역순 */
   .why-card:nth-child(2) {
     align-self: flex-end;
     margin-left: auto;
     flex-direction: row-reverse;
   }
-
-  /* 세 번째 카드 - 왼쪽 정렬 */
   .why-card:nth-child(3) {
     align-self: flex-start;
     margin-right: auto;
@@ -398,16 +457,41 @@
 
   .why-card-image-left {
     flex: 0 0 35%;
-    padding: var(--spacing-xl);
+    padding: 0;
   }
 
   .why-card-image-left img {
-    max-width: 280px;
+    max-width: 100%;
   }
 
   .why-card-content-right {
     flex: 1;
-    padding: 0 var(--spacing-xl);
+    padding: 0 0 0 var(--spacing-md);
+  }
+
+  .why-card-title {
+    font-size: var(--text-2xl);
+  }
+
+  .why-card-text {
+    font-size: var(--text-base);
+  }
+
+  .why-card-note {
+    font-size: var(--text-sm);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: var(--text-6xl);
+  }
+
+  .why-card {
+    max-width: 750px;
+    min-height: auto;
+    padding: var(--spacing-xl);
   }
 
   .why-card-title {
@@ -421,24 +505,13 @@
   .why-card-note {
     font-size: var(--text-base);
   }
-}
 
-/* Desktop (1024px and up) */
-@media (min-width: 1024px) {
-  .section-title {
-    font-size: var(--text-6xl);
-  }
-
-  .why-card {
-    max-width: 1100px;
-  }
-
-  .why-card-title {
-    font-size: var(--text-4xl);
+  .why-card-image-left {
+    flex: 0 0 40%;
   }
 
   .why-card-image-left img {
-    max-width: 300px;
+    max-width: 100%;
   }
 }
 

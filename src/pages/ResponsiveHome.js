@@ -1,10 +1,35 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import ResponsiveNav from "../components/ResponsiveNav";
 import ResponsiveHero from "../components/ResponsiveHero";
 import ResponsiveFooter from "../components/ResponsiveFooter";
 import "./ResponsiveHome.css";
 
 const ResponsiveHome = memo(() => {
+  const concernsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          } else {
+            // 화면에서 벗어나면 animate 클래스 제거 (반복을 위해)
+            entry.target.classList.remove('animate');
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px'
+      }
+    );
+
+    const concernCards = concernsRef.current?.querySelectorAll('.concern-card');
+    concernCards?.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="responsive-home">
       <ResponsiveNav currentPage="home" />
@@ -54,7 +79,7 @@ const ResponsiveHome = memo(() => {
         </section>
 
         {/* Concerns Section */}
-        <section className="concerns-section">
+        <section className="concerns-section" ref={concernsRef}>
           <div className="container">
             <h2 className="concerns-title">혹시, 이런 고민 중이신가요?</h2>
             <div className="concerns-grid">
@@ -114,11 +139,10 @@ const ResponsiveHome = memo(() => {
                     풀이노트 오답노트<br/>바인더 관리
                   </h3>
                   <p className="why-card-text">
-                    학생의 수학적 습관을 바꾸고 자신감 상승 서술 능력과 철저한 관리를 위해 
-                    원장이 직접 정기적으로 검사 실시
+                    학생의 수학적 습관과 진도의 철저한 관리를 위해 원장이 직접 정기적으로 검사 실시
                   </p>
                   <p className="why-card-note">
-                    @ 1년 2회 (3월/ 9월) 오답노트 / 풀이노트 Contest 실시
+                    @ 1년 2회 (3월/ 9월) 오답노트/풀이노트 Contest 실시
                   </p>
                 </div>
               </div>
@@ -132,9 +156,7 @@ const ResponsiveHome = memo(() => {
                   <h3 className="why-card-title">철저한 책임 수업제도</h3>
                   <p className="why-card-text">
                     전담 교사제<br/>
-                    담임에게 반별 입학 인원 제한 권한 부여, 초등 10명, 중등 12명 정원제<br/>
-                    저학년이나 학업 성취도가 저조한 반의 경우 6명 선으로 
-                    담임 재량으로 정원 제한 가능
+                    각 학년, 반의 수준을 고려해 담임선생님에게 반별 입학 제한 권한 부여
                   </p>
                 </div>
               </div>
@@ -144,10 +166,10 @@ const ResponsiveHome = memo(() => {
                   <img src="/tea.png" alt="Detention" />
                 </div>
                 <div className="why-card-content-right">
-                  <h3 className="why-card-title">Detention</h3>
+                  <h3 className="why-card-title">Preparation</h3>
                   <p className="why-card-text">
-                    Daily Test 점수 평균 이하 학생, 과제물 미제출 학생,<br/>
-                    수업태도 불량 학생, 지각생, 결석생을 대상으로 엄격하게 실시
+                    Daily Test 점수 평균 이하 학생, 과제물 미제출 학생,
+                    수업태도 불량 학생, 지각생, 결석생을 대상으로 엄격하게 자습 실시
                   </p>
                 </div>
               </div>
