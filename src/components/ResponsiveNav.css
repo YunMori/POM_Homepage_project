@@ -3,8 +3,14 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* border-bottom-left-radius: var(--radius-lg);
-  border-bottom-right-radius: var(--radius-lg); */
+  transition: border-radius var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* 스크롤 시 하단 둥근 모서리 추가 */
+.responsive-nav.scrolled {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .nav-container {

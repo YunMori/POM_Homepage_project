@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ResponsiveNav.css";
@@ -6,6 +6,25 @@ import "./ResponsiveNav.css";
 const ResponsiveNav = memo(({ currentPage = "home" }) => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 100px 이상 스크롤되면 isScrolled를 true로 설정
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,11 +33,10 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
   const handleNavigation = (path) => {
     navigate(path);
     setIsMenuOpen(false);
-
   };
 
   return (
-    <nav className="responsive-nav">
+    <nav className={`responsive-nav ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-content">
           {/* Logo */}
