@@ -1,8 +1,5 @@
-# Locofy Lightning - Figma to Code in a flash (커뮤니티)
-
-  Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code> with a minimum version of 20.
-
-  To preview and run the project on your device:
-  1) Open project folder in <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
-  2) In the terminal, run `npm install`
-  3) Run `npm start` to view project in browser
+# Power of math(수학의힘) 세종 소담점 홈페이지 만들기 프로젝트
+  UPDATE_LIST
+  1. 모바일 변환시 글자 크기 깨짐
+  2. 지도 api삽입
+  3. '결과로 증명합니다' 부분 글자 크기 작음(제목 급으로 만들기)
