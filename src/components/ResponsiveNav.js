@@ -1,10 +1,13 @@
+'use client';
+
 import { memo, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import PropTypes from "prop-types";
 import "./ResponsiveNav.css";
 
-const ResponsiveNav = memo(({ currentPage = "home" }) => {
-  const navigate = useNavigate();
+const ResponsiveNav = memo(() => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -19,7 +22,7 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     // 컴포넌트 언마운트 시 이벤트 리스너 제거
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,22 +33,24 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleNavigation = (path) => {
-    navigate(path);
+  // Close menu when path changes
+  useEffect(() => {
     setIsMenuOpen(false);
-  };
+  }, [pathname]);
+
+  const isActive = (path) => pathname === path ? "active" : "";
 
   return (
     <nav className={`responsive-nav ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-content">
           {/* Logo */}
-          <div className="nav-logo" onClick={() => handleNavigation("/")}>
+          <Link href="/" className="nav-logo">
             <img src="/main-logo@2x.png" alt="수학의힘 로고" />
-          </div>
+          </Link>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={toggleMenu}
             aria-label="메뉴 열기/닫기"
@@ -60,24 +65,15 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
 
           {/* Desktop Navigation */}
           <div className="desktop-nav">
-            <button
-              onClick={() => handleNavigation("/")}
-              className={currentPage === "home" ? "active" : ""}
-            >
+            <Link href="/" className={isActive("/")}>
               Home
-            </button>
-            <button
-              onClick={() => handleNavigation("/curriculum/elementary")}
-              className={currentPage === "curriculum" ? "active" : ""}
-            >
+            </Link>
+            <Link href="/curriculum/elementary" className={isActive("/curriculum/elementary")}>
               Curriculum
-            </button>
-            <button
-              onClick={() => handleNavigation("/contact")}
-              className={currentPage === "contact" ? "active" : ""}
-            >
+            </Link>
+            <Link href="/contact" className={isActive("/contact")}>
               Contact
-            </button>
+            </Link>
             <a
               href="https://blog.naver.com/powerofmath_sodam"
               target="_blank"
@@ -97,24 +93,15 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
 
         {/* Mobile Navigation Menu */}
         <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
-          <button
-            onClick={() => handleNavigation("/")}
-            className={currentPage === "home" ? "active" : ""}
-          >
+          <Link href="/" className={isActive("/")}>
             Home
-          </button>
-          <button
-            onClick={() => handleNavigation("/curriculum/elementary")}
-            className={currentPage === "curriculum" ? "active" : ""}
-          >
+          </Link>
+          <Link href="/curriculum/elementary" className={isActive("/curriculum/elementary")}>
             Curriculum
-          </button>
-          <button
-            onClick={() => handleNavigation("/contact")}
-            className={currentPage === "contact" ? "active" : ""}
-          >
+          </Link>
+          <Link href="/contact" className={isActive("/contact")}>
             Contact
-          </button>
+          </Link>
           <a
             href="https://blog.naver.com/powerofmath_sodam"
             target="_blank"
@@ -136,6 +123,7 @@ const ResponsiveNav = memo(({ currentPage = "home" }) => {
 });
 
 ResponsiveNav.propTypes = {
+  // currentPage prop is no longer needed but keeping it valid to avoid prop warning if passed
   currentPage: PropTypes.string,
 };
 

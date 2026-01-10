@@ -1,0 +1,124 @@
+/* [project]/src/responsive_global.css [app-client] (css) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #558bcf;
+  --background-light: #f9f9f9;
+  --background-white: #fff;
+  --text-dark: #000;
+  --text-gray: #d9d9d9;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 100px;
+  --container-max-width: 1280px;
+  --container-padding: 20px;
+  --font-primary: "Noto Sans KR", sans-serif;
+  --font-secondary: "Work Sans", sans-serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+  --transition-fast: .15s ease-in-out;
+  --transition-base: .25s ease-in-out;
+  --transition-slow: .35s ease-in-out;
+  --shadow-sm: 0 1px 2px 0 #0000000d;
+  --shadow-md: 0 4px 6px -1px #0000001a;
+  --shadow-lg: 0 10px 15px -3px #0000001a;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 60px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--spacing-2xl) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--spacing-4xl) 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.tablet-up {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .tablet-up {
+    display: block;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*# sourceMappingURL=src_responsive_global_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/curriculum/layout,_N_T_/curriculum/middle/layout,_N_T_/curriculum/middle/page,_N_T_/curriculum/middle"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/curriculum/middle/__PAGE__",
+    "/curriculum/middle",
+    "/curriculum",
+    "/_index",
+    "/_head"
+  ]
+}

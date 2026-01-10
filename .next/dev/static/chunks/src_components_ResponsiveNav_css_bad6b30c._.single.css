@@ -1,0 +1,210 @@
+/* [project]/src/components/ResponsiveNav.css [app-client] (css) */
+.responsive-nav {
+  background-color: var(--primary-color);
+  z-index: 1000;
+  transition: border-radius var(--transition-base), box-shadow var(--transition-base);
+  position: sticky;
+  top: 0;
+}
+
+.responsive-nav.scrolled {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-container {
+  max-width: var(--container-max-width);
+  padding: 0 var(--spacing-md);
+  margin: 0 auto;
+}
+
+.nav-content {
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  display: flex;
+}
+
+.nav-logo {
+  cursor: pointer;
+  z-index: 1001;
+  align-items: center;
+  display: flex;
+}
+
+.nav-logo img {
+  width: auto;
+  height: 40px;
+}
+
+.mobile-menu-btn {
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+.hamburger {
+  flex-direction: column;
+  gap: 5px;
+  width: 25px;
+  display: flex;
+}
+
+.hamburger span {
+  background-color: var(--background-white);
+  width: 100%;
+  height: 3px;
+  transition: all var(--transition-base);
+  border-radius: 2px;
+  display: block;
+}
+
+.hamburger.open span:first-child {
+  transform: rotate(45deg)translate(8px, 8px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg)translate(7px, -7px);
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav {
+  background-color: var(--primary-color);
+  max-height: 0;
+  transition: max-height var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.mobile-nav.open {
+  max-height: 400px;
+}
+
+.mobile-nav button, .mobile-nav a {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--background-white);
+  font-size: var(--text-lg);
+  font-family: var(--font-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ffffff1a;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+.mobile-nav button:hover, .mobile-nav a:hover {
+  background-color: #ffffff1a;
+}
+
+.mobile-nav button.active {
+  background-color: #ffffff26;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .nav-content {
+    height: 80px;
+  }
+
+  .nav-logo img {
+    height: 50px;
+  }
+
+  .mobile-nav button, .mobile-nav a {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .nav-content {
+    height: 90px;
+  }
+
+  .nav-logo img {
+    height: 55px;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .desktop-nav {
+    align-items: center;
+    gap: var(--spacing-xl);
+    display: flex;
+  }
+
+  .desktop-nav button, .desktop-nav a {
+    color: var(--background-white);
+    font-size: var(--text-lg);
+    font-family: var(--font-primary);
+    cursor: pointer;
+    padding: var(--spacing-xs) 0;
+    transition: opacity var(--transition-fast);
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .desktop-nav button:after, .desktop-nav a:after {
+    content: "";
+    background-color: var(--background-white);
+    width: 0;
+    height: 2px;
+    transition: width var(--transition-base);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+
+  .desktop-nav button:hover:after, .desktop-nav a:hover:after {
+    width: 100%;
+  }
+
+  .desktop-nav button.active {
+    font-weight: 700;
+  }
+
+  .desktop-nav button.active:after {
+    width: 100%;
+  }
+
+  .desktop-nav button:hover, .desktop-nav a:hover {
+    opacity: .8;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=src_components_ResponsiveNav_css_bad6b30c._.single.css.map*/

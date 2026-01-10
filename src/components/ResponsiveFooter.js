@@ -1,13 +1,15 @@
+'use client';
+
 import { memo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import PropTypes from "prop-types";
 import "./ResponsiveFooter.css";
 
 const ResponsiveFooter = memo(({ className = "" }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleContactClick = () => {
-    navigate("/contact");
+    router.push("/contact");
   };
 
   return (
@@ -17,7 +19,7 @@ const ResponsiveFooter = memo(({ className = "" }) => {
           {/* Company Info */}
           <div className="footer-section footer-main">
             <h2 className="footer-title">수학의힘 세종 소담점</h2>
-            <button 
+            <button
               className="footer-contact-btn"
               onClick={handleContactClick}
             >
